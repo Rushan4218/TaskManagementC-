@@ -37,7 +37,7 @@ class App
     public:
         App()
         {
-            std::cout << "\033[2J;\033[0;0H";
+            std::cout << "\033[2J;\033[0;0H"; //clrscr();
             std::cout << "--------------------" << std::endl;
             std::cout << "| TASK MANAGER APP |" << std::endl;
             std::cout << "--------------------" << std::endl;
@@ -184,6 +184,7 @@ class App
                 file << task.status << std::endl;
             }
             file.close();
+
         }
 };
 
@@ -196,7 +197,7 @@ int main()
     {
         taskApp.displayMenu();
         std::cout << "Enter your choice: "; 
-        std::cin >> choice; 
+        std::cin >> choice;
         getchar();
         if (choice == 1)
         {
@@ -225,8 +226,8 @@ int main()
         }
         else 
         {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+            // std::cin.clear();
+            // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Please enter a valid choice [1 - 5]: ";
         }
     }
